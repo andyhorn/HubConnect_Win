@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Windows.Forms;
 using HubConnect.Properties;
 using InTheHand.Net;
@@ -30,9 +30,9 @@ namespace HubConnect
         }
         private void ScanButton_Click(object sender, EventArgs e)
         {
-            AddMessage(Resources.ScanningText);
+            //AddMessage(Resources.ScanningText);
             ScanForDevices();
-            AddMessage(Resources.FinishedScanningMessage);
+            //AddMessage(Resources.FinishedScanningMessage);
         }
 
         private void SubmitButton_Click(object sender, EventArgs e)
@@ -53,6 +53,8 @@ namespace HubConnect
         private void ScanForDevices()
         {
             DeviceSelectBox.Items.Clear();
+            DeviceSelectBox.SelectedText = "";
+            DeviceSelectBox.Text = "";
             using (new WaitCursor())
             {
                 BluetoothRadio.PrimaryRadio.Mode = RadioMode.Connectable;   // allow connections to this device
@@ -62,9 +64,12 @@ namespace HubConnect
                 foreach(var device in devices)
                 {
                     // add each device to the cache
-                    _devices.Add(device);
-                    // add the device names to the select box
-                    DeviceSelectBox.Items.Add(device.DeviceName);
+                    if (device.DeviceName.Contains("WetMyPlants"))
+                    {
+                        _devices.Add(device);
+                        // add the device names to the select box
+                        DeviceSelectBox.Items.Add(device.DeviceName);
+                    }
                 }
             }
         }
@@ -79,7 +84,7 @@ namespace HubConnect
             // check that all fields were filled
             if (email != null && network != null && password != null)
             {
-                AddMessage(Resources.SendingMessage);
+                //AddMessage(Resources.SendingMessage);
                 ObexStatusCode code;    // we will receive a status code after sending data
                 using (new WaitCursor())
                 {
@@ -96,7 +101,7 @@ namespace HubConnect
                 // display a success or error message to the user
                 if ((code & ObexStatusCode.OK) != 0)
                 {
-                    AddMessage(Resources.SendSuccess);
+                    AddMessage(Resources.SendSuccess, true);
                 }
                 else
                 {
@@ -111,12 +116,11 @@ namespace HubConnect
             _targetAddress = _devices.FirstOrDefault(d => d.DeviceName.Equals(DeviceSelectBox.SelectedItem))?.DeviceAddress;
         }
 
-        private void AddMessage(string message)
+        private void AddMessage(string message, bool success = false)
         {
-            if (StatusTextBox.Lines.Length != 0)
-                StatusTextBox.AppendText($"\r\n{message}");
-            else
-                StatusTextBox.Text = message;
+            StatusLabel.Text = message;
+            if (success)
+                StatusLabel.ForeColor = Color.DarkCyan;
         }
     }
 }

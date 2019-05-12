@@ -40,13 +40,12 @@
             this.ScanButton = new System.Windows.Forms.Button();
             this.ConnectionStatusLabel = new System.Windows.Forms.Label();
             this.StatusLabel = new System.Windows.Forms.Label();
-            this.StatusTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // EmailLabel
             // 
             this.EmailLabel.AutoSize = true;
-            this.EmailLabel.Location = new System.Drawing.Point(77, 70);
+            this.EmailLabel.Location = new System.Drawing.Point(77, 86);
             this.EmailLabel.Name = "EmailLabel";
             this.EmailLabel.Size = new System.Drawing.Size(32, 13);
             this.EmailLabel.TabIndex = 0;
@@ -55,7 +54,7 @@
             // NetworkLabel
             // 
             this.NetworkLabel.AutoSize = true;
-            this.NetworkLabel.Location = new System.Drawing.Point(31, 96);
+            this.NetworkLabel.Location = new System.Drawing.Point(31, 112);
             this.NetworkLabel.Name = "NetworkLabel";
             this.NetworkLabel.Size = new System.Drawing.Size(78, 13);
             this.NetworkLabel.TabIndex = 1;
@@ -64,7 +63,7 @@
             // PwdLabel
             // 
             this.PwdLabel.AutoSize = true;
-            this.PwdLabel.Location = new System.Drawing.Point(13, 122);
+            this.PwdLabel.Location = new System.Drawing.Point(13, 138);
             this.PwdLabel.Name = "PwdLabel";
             this.PwdLabel.Size = new System.Drawing.Size(96, 13);
             this.PwdLabel.TabIndex = 2;
@@ -72,21 +71,21 @@
             // 
             // EmailTextBox
             // 
-            this.EmailTextBox.Location = new System.Drawing.Point(115, 67);
+            this.EmailTextBox.Location = new System.Drawing.Point(115, 83);
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(157, 20);
             this.EmailTextBox.TabIndex = 3;
             // 
             // NetworkTextBox
             // 
-            this.NetworkTextBox.Location = new System.Drawing.Point(115, 93);
+            this.NetworkTextBox.Location = new System.Drawing.Point(115, 109);
             this.NetworkTextBox.Name = "NetworkTextBox";
             this.NetworkTextBox.Size = new System.Drawing.Size(157, 20);
             this.NetworkTextBox.TabIndex = 4;
             // 
             // PwdTextBox
             // 
-            this.PwdTextBox.Location = new System.Drawing.Point(115, 119);
+            this.PwdTextBox.Location = new System.Drawing.Point(115, 135);
             this.PwdTextBox.Name = "PwdTextBox";
             this.PwdTextBox.Size = new System.Drawing.Size(157, 20);
             this.PwdTextBox.TabIndex = 5;
@@ -97,9 +96,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SubmitButton.AutoSize = true;
-            this.SubmitButton.Location = new System.Drawing.Point(197, 239);
+            this.SubmitButton.Location = new System.Drawing.Point(197, 233);
             this.SubmitButton.Name = "SubmitButton";
-            this.SubmitButton.Size = new System.Drawing.Size(75, 25);
+            this.SubmitButton.Size = new System.Drawing.Size(75, 27);
             this.SubmitButton.TabIndex = 6;
             this.SubmitButton.Text = "Submit";
             this.SubmitButton.UseVisualStyleBackColor = true;
@@ -110,16 +109,16 @@
             this.DeviceSelectBox.FormattingEnabled = true;
             this.DeviceSelectBox.Items.AddRange(new object[] {
             "Select a device"});
-            this.DeviceSelectBox.Location = new System.Drawing.Point(115, 21);
+            this.DeviceSelectBox.Location = new System.Drawing.Point(12, 55);
             this.DeviceSelectBox.Name = "DeviceSelectBox";
-            this.DeviceSelectBox.Size = new System.Drawing.Size(157, 21);
+            this.DeviceSelectBox.Size = new System.Drawing.Size(260, 21);
             this.DeviceSelectBox.TabIndex = 7;
             this.DeviceSelectBox.SelectedIndexChanged += new System.EventHandler(this.DeviceSelectBox_SelectedIndexChanged);
             // 
             // DeviceLabel
             // 
             this.DeviceLabel.AutoSize = true;
-            this.DeviceLabel.Location = new System.Drawing.Point(68, 24);
+            this.DeviceLabel.Location = new System.Drawing.Point(9, 39);
             this.DeviceLabel.Name = "DeviceLabel";
             this.DeviceLabel.Size = new System.Drawing.Size(41, 13);
             this.DeviceLabel.TabIndex = 8;
@@ -131,9 +130,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ScanButton.AutoSize = true;
-            this.ScanButton.Location = new System.Drawing.Point(12, 239);
+            this.ScanButton.Location = new System.Drawing.Point(12, 233);
             this.ScanButton.Name = "ScanButton";
-            this.ScanButton.Size = new System.Drawing.Size(75, 25);
+            this.ScanButton.Size = new System.Drawing.Size(75, 27);
             this.ScanButton.TabIndex = 9;
             this.ScanButton.Text = "Scan";
             this.ScanButton.UseVisualStyleBackColor = true;
@@ -149,24 +148,15 @@
             // 
             // StatusLabel
             // 
-            this.StatusLabel.AutoSize = true;
-            this.StatusLabel.Location = new System.Drawing.Point(13, 150);
+            this.StatusLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.StatusLabel.Location = new System.Drawing.Point(12, 172);
             this.StatusLabel.Name = "StatusLabel";
-            this.StatusLabel.Size = new System.Drawing.Size(0, 13);
+            this.StatusLabel.Size = new System.Drawing.Size(260, 45);
             this.StatusLabel.TabIndex = 12;
-            // 
-            // StatusTextBox
-            // 
-            this.StatusTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.StatusTextBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.StatusTextBox.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StatusTextBox.Location = new System.Drawing.Point(12, 166);
-            this.StatusTextBox.Multiline = true;
-            this.StatusTextBox.Name = "StatusTextBox";
-            this.StatusTextBox.ReadOnly = true;
-            this.StatusTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.StatusTextBox.Size = new System.Drawing.Size(260, 65);
-            this.StatusTextBox.TabIndex = 13;
+            this.StatusLabel.Text = "Scan for your Hub, select it in the dropdown, fill out the fields, and click Subm" +
+    "it!";
+            this.StatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // HubConnectForm
             // 
@@ -174,7 +164,6 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(284, 276);
-            this.Controls.Add(this.StatusTextBox);
             this.Controls.Add(this.StatusLabel);
             this.Controls.Add(this.ConnectionStatusLabel);
             this.Controls.Add(this.ScanButton);
@@ -192,7 +181,6 @@
             this.MinimumSize = new System.Drawing.Size(300, 315);
             this.Name = "HubConnectForm";
             this.Text = "HubConnect";
-            this.Load += new System.EventHandler(this.HubConnectForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,7 +200,6 @@
         private System.Windows.Forms.Button ScanButton;
         private System.Windows.Forms.Label ConnectionStatusLabel;
         private System.Windows.Forms.Label StatusLabel;
-        private System.Windows.Forms.TextBox StatusTextBox;
     }
 }
 
